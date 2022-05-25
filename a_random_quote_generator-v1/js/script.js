@@ -10,7 +10,7 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
-// Array storing quotes objects. 
+// Array storing quotes objects 
 let quotes = [{quote: 'In times of change, learners inherit the earth, while the learned find themselves beautifully equipped to deal with a world that no longer exists.', source: 'Eric Hoffer', tag:'inspirational'},
               {quote: 'My mission in life is not merely to survive, but to thrive; and to do so with some passion some compassion, some humor and some style.', source: 'Maya Angelou' , citation:'harperbazaar.com', year:2015, tag:'inspirational'},
               {quote:'If you want to find the secrets of the universe, think in terms of energy, frequency and vibration.', source:'Nikola Tesla', citation:'goodreads.com', tag:'theory'},
@@ -23,7 +23,7 @@ let quotes = [{quote: 'In times of change, learners inherit the earth, while the
  * `getRandomQuote` function
 ***/
 function getRandomQuote() {
-  //Variable storing logic to randomize quotes.           
+  //Variable storing logic to randomize quotes           
   let randomizeQuote = Math.floor(Math.random() * quotes.length);
  return quotes[randomizeQuote];
 }
@@ -72,7 +72,7 @@ function changeBackgroundColor() {
 document.getElementById('load-quote').addEventListener("click", changeBackgroundColor);
 
 //2. Auto-refreshed quotes
-//Using the setInterval method to call the printQuote and changeBackgroundColor functions evey 5 seconds
+//Using the setInterval method to call the printQuote and changeBackgroundColor functions every 10 seconds
 setInterval(printQuote, 10000);
 setInterval(changeBackgroundColor, 10000);
 
