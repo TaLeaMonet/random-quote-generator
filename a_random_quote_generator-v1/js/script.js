@@ -41,20 +41,15 @@ function printQuote() {
 
   //conditional checking if citation property exists                  
   if(randomQuote.citation) {
-      htmlString = `<p class = "quote">${randomQuote.quote}</p> 
-                   <p class = "source">${randomQuote.source}
-                  <span class="citation">${randomQuote.citation}</span>` 
+      htmlString +=  `<span class="citation">${randomQuote.citation}</span>`              
   } 
   //conditional checking if year property exists
   if(randomQuote.year) {
-    htmlString = `<p class = "quote">${randomQuote.quote}</p> 
-    <p class = "source">${randomQuote.source}
-    <span class="citation">${randomQuote.citation}</span>
-   <span class="year">${randomQuote.year}</span>` 
+    htmlString += `<span class="year">${randomQuote.year}</span>` 
   }
   //conditional checking if tag property exists
   if(randomQuote.tag) {
-    htmlString += `, <span class="tag">${randomQuote.tag}</span>`
+    htmlString += `<span class="tag">, ${randomQuote.tag}</span>`
   }
 
 //Append closing paragraph to the end of the HTML string 
@@ -65,20 +60,16 @@ return document.getElementById('quote-box').innerHTML = htmlString;
 }
 printQuote();
 
-
 //Extra Credit!!!
 //1. Random background colors
-//Variable to target the load-quote button
-let bgColor = document.getElementById('load-quote');
-
-//Function using .floor and .random method to randomize background's color using hex values
+//Function using .floor and .random method to randomize background's color using hexadecimal values
 function changeBackgroundColor() {
   let randomColor = Math.floor(Math.random()*16777215).toString(16);
   document.getElementById("background-color").style.backgroundColor = '#' + randomColor;
   return randomColor; 
 }
 //Event listener for color randomization 
-bgColor.addEventListener("click", changeBackgroundColor);
+document.getElementById('load-quote').addEventListener("click", changeBackgroundColor);
 
 //2. Auto-refreshed quotes
 //Using the setInterval method to call the printQuote and changeBackgroundColor functions evey 5 seconds
