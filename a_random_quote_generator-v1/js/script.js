@@ -36,8 +36,8 @@ function printQuote() {
   //Variable calling the getRandomQuote function
   let randomQuote = getRandomQuote();
   //Variable that will display source and quote properties
-  let htmlString = `<p class = "quote">${randomQuote.quote}</p> 
-                   <p class = "source">${randomQuote.source}` 
+  let htmlString = `<p class= "quote">${randomQuote.quote}</p> 
+                   <p class= "source">${randomQuote.source}` 
 
   //conditional checking if citation property exists                  
   if(randomQuote.citation) {
@@ -65,7 +65,7 @@ printQuote();
 //Function using .floor and .random method to randomize background's color using hexadecimal values
 function changeBackgroundColor() {
   let randomColor = Math.floor(Math.random()*16777215).toString(16);
-  document.getElementById("background-color").style.backgroundColor = '#' + randomColor;
+  document.getElementById('background-color').style.backgroundColor = '#' + randomColor;
   return randomColor; 
 }
 //Event listener for color randomization 
